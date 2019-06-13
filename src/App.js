@@ -10,7 +10,22 @@ class App extends React.Component {
       citas: []
   };
 
-  crearNuevaCita = (datos) => {
+  // cuando la aplicacion carga
+  componentDidMount() {
+      const citasLS = localStorage.getItem('citas');
+      if (citasLS) {
+          this.setState({
+              citas: JSON.parse(citasLS)
+          })
+      }
+  }
+
+    // cuando eliminamos una cita
+  componentDidUpdate() {
+      localStorage.setItem('citas', JSON.stringify(this.state.citas));
+  }
+
+    crearNuevaCita = (datos) => {
       // hacemos la copia obligatoria del state.citas
       // y le añadirmos las nueva cita que es datos
       const citas = [...this.state.citas, datos];
