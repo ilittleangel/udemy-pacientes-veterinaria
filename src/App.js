@@ -25,7 +25,7 @@ class App extends React.Component {
       localStorage.setItem('citas', JSON.stringify(this.state.citas));
   }
 
-    crearNuevaCita = (datos) => {
+  crearNuevaCita = (datos) => {
       // hacemos la copia obligatoria del state.citas
       // y le añadirmos las nueva cita que es datos
       const citas = [...this.state.citas, datos];

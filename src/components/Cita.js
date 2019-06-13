@@ -1,5 +1,4 @@
 import React from 'react';
-import Citas from "./Citas";
 import PropTypes from 'prop-types';
 
 
