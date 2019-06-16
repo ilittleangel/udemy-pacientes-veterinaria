@@ -4,10 +4,18 @@ import PropTypes from 'prop-types';
 
 
 const Citas = ({citas, eliminarCita}) => {
+
+    let mensaje = "Administra aqui tus citas";
+    if (citas.length === 0) {
+        mensaje = "No hay citas"
+    }
+
+    const msg = Object.keys(citas).length === 0 ? 'No hay citas' : 'Administra aqui tus citas';
+
     return (
         <div className="card mt-2 py-5">
             <div className="card-body">
-                <h2>Administra aqui tus citas</h2>
+                <h2>{msg}</h2>
                 <div className="lista-citas">
                     {citas.map(cita => (
                         <Cita
